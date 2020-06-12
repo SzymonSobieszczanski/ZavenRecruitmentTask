@@ -1,0 +1,54 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+
+table {
+    border: 1px solid #eee;
+    margin-top: 1em;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+
+}
+th {
+    text-align: center !important;
+}
+.new {
+    color: blue;
+}
+.done {
+    color: green
+}
+.InProgress {
+    color: greenyellow;
+}
+.failed {
+    color: red;
+}
+.label {
+    font-size: 1.5em;
+    color: black !important;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.navbar-inverse {
+    background-color: #eee;
+    border-color: #eee;
+}

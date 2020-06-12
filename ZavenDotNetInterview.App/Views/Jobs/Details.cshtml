@@ -1,0 +1,40 @@
+﻿@model ZavenDotNetInterview.Common.ViewModels.JobViewModel
+@{
+    ViewBag.Title = "Details - " + Model.Name;
+}
+
+<h2>Job Details</h2>
+
+<div>
+    <p><span class="label">Name:</span> @Model.Name</p>
+    <p><span class="label">Proceed after:</span> @Model.DoAfter.ToString()</p>
+    <p> <span class="label">Status</span> @Model.Status </p>
+    <br/>
+    <br/>
+    <h3>
+        Logs
+    </h3>
+    <table>
+        <tr>
+            <th>
+                Date
+            </th>
+            <th>
+                Description
+            </th>
+        </tr>
+ 
+        @foreach (var item in Model.Logs)
+        {
+            <tr>
+                <td>
+                    @item.CreatedAt.ToString()
+                </td>
+                <td>
+                    @item.Description
+                </td>
+            </tr>
+     
+        }
+    </table>
+</div>

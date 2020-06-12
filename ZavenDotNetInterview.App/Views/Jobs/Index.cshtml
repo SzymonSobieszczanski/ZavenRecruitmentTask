@@ -1,0 +1,88 @@
+﻿@using ZavenDotNetInterview.Common.Enums
+@model List<ZavenDotNetInterview.Common.ViewModels.JobViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Jobs List</h2>
+@Html.ActionLink("Create", "Create", null, new { @class = "btn btn-primary" })
+<button class="btn btn-warning" id="process" onclick="test()">Process</button>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Name")
+        </th>
+        <th>
+            @Html.DisplayName("Status")
+        </th>
+        <th>
+            @Html.DisplayName("Created at")
+        </th>
+        <th>
+        </th>
+    </tr>
+    @foreach (var job in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => job.Name)
+            </td>
+            @if (job.Status == JobStatus.New)
+            {
+                <td class="new">
+                    @Html.DisplayFor(modelItem => job.Status)
+                </td>
+            }
+            @if (job.Status == JobStatus.Done)
+            {
+                <td class="done">
+                    @Html.DisplayFor(modelItem => job.Status)
+                </td>
+            }
+            @if (job.Status == JobStatus.Failed)
+            {
+                <td class="failed">
+                    @Html.DisplayFor(modelItem => job.Status)
+                </td>
+            }
+            @if (job.Status == JobStatus.InProgress)
+            {
+                <td class="InProgress">
+                    @Html.DisplayFor(modelItem => job.Status)
+                </td>
+            }
+
+            <td>
+                @Html.DisplayFor(modelItem => job.CreatedAt)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { jobId = job.Id }, new { @class = "btn btn-success" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<script type="text/javascript" defer>
+    function test() {
+
+            $.ajax({
+                url: '/Jobs/Process',
+                type: 'POST',
+                data: {},
+                contentType: 'application/json; charset=utf-8',
+                success: function(data) {
+                   
+                },
+                error: function() {
+               
+                }
+            }).done(function (data) {
+                location.reload();
+            });
+
+            
+        
+    }
+</script>

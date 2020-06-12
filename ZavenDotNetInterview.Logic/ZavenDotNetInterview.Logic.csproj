@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ZavenDotNetInterview.Abstract\ZavenDotNetInterview.Abstract.csproj" />
+    <ProjectReference Include="..\ZavenDotNetInterview.Data\ZavenDotNetInterview.Data.csproj" />
+  </ItemGroup>
+
+</Project>
